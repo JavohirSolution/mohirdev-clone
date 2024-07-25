@@ -17,6 +17,7 @@ export default function Footer() {
                 <div className='flex flex-col justify-end md:items-end items-center'>
                     <h1 className='text-2xl md:text-3xl '>+998 (78) 113 62 72</h1>
                     <p className='mt-3 text-sm text-slate-500'>© Mohirdev 2024. Barcha huquqlari himoyalangan</p>
+                    <h3 className='text-slate-300'>Created by To'lqinov Javohir</h3>
                 </div>
             </div>
         </div>
