@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, Navigate, useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../database/firebase';
 import Input from '../ui/Input';
@@ -11,7 +11,7 @@ function Register() {
     const [password, setPassword] = useState("");
     const navigate = useNavigate()
 
-    const { isloading, isLogged, error } = useSelector(state => state.auth);
+    const { isloading, isLogged } = useSelector(state => state.auth);
     const dispatch = useDispatch()
 
     const handleSubmit = async (e) => {
@@ -33,7 +33,7 @@ function Register() {
             console.log(isLogged)
             navigate("/")
         }
-    }, [isLogged])
+    }, [isLogged, navigate])
     return (
         <div>
             <section className="bg-gray-50 dark:bg-gray-900">
@@ -52,7 +52,7 @@ function Register() {
                                         <input id="terms" aria-describedby="terms" type="checkbox" className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required />
                                     </div>
                                     <div className="ml-3 text-sm">
-                                        <label htmlFor="terms" className="font-light text-gray-500 dark:text-gray-300">I accept the <a className="font-medium text-primary-600 hover:underline dark:text-primary-500" href="#">Terms and Conditions</a></label>
+                                        <label htmlFor="terms" className="font-light text-gray-500 dark:text-gray-300">I accept the <button className="font-medium text-primary-600 hover:underline dark:text-primary-500">Terms and Conditions</button></label>
                                     </div>
                                 </div>
 
