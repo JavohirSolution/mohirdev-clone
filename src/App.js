@@ -13,7 +13,7 @@ function App() {
         if (token && validateToken(token)) {
             navigate("/");
         } else {
-             navigate(["/login"]);
+             navigate("/login");
         }
     }, [navigate]);
     return (
